@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  autoinstall:
+    image: nginx:latest
+    ports: 
+      - '9090:80'
+    volumes:
+      - '/root/autoinstall:/usr/share/nginx/html'
