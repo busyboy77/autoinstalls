@@ -1,0 +1,17 @@
+
+VMNAME=VMNAME;virt-install \
+--name  ${VMNAME} \
+--ram 10240 \
+--disk path=/DISK2/${VMNAME}.img,size=100  \
+--vcpus 8 \
+--os-type linux \
+--os-variant ubuntu20.04 \
+--network type=direct,source=eno1,source_mode=bridge,model=virtio \
+--graphics none \
+--console pty,target_type=serial \
+--location '/var/lib/libvirt/images/ubuntu-20.04.4-live-server-amd64.iso',initrd=casper/initrd,kernel=casper/vmlinuz \
+--extra-args 'console=ttyS0,115200n8 serial' \
+--features kvm_hidden=on \
+--machine q35 \
+--extra-args='console=ttyS0,115200n8 serial net.ifnames=0 biosdevname=0 autoinstall  ds=nocloud-net;s=http://192.168.2.210:9090/'
+
