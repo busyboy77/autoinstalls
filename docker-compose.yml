@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+        auto-install:
+                image: nginx:alpine
+                volumes:
+                        - /root/2.210-ROOT/autoinstall:/usr/share/nginx/html:ro
+                ports:
+                        - 9090:80
+        kube-install:
+                image: nginx:alpine
+                volumes:
+                        - /root/2.210-ROOT/kubeinstall:/usr/share/nginx/html:ro
+                ports:
+                        - 9191:80

@@ -168,8 +168,9 @@ autoinstall:
       apt install python3-pip --yes 
       pip3 install docker-compose 
       sudo apt-get update
-      sudo apt-get install -y kubelet kubeadm kubectl rpcbind nfs-common
-      sudo apt-mark hold kubelet kubeadm kubectl
+      sudo apt-get install -y kubelet kubeadm kubectl rpcbind nfs-common open-iscsi
+      sudo apt-mark hold kubelet kubeadm kubectl 
+      sudo systemctl enable iscsid
       reboot
       EOF
     - curtin in-target --target /target chmod 744 /etc/finish-install-setup.sh
