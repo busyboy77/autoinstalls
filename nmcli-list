@@ -1,3 +1,5 @@
+https://2020-06-enix.container.training/5.yml.html#28
+
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
